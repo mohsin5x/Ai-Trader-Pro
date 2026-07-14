@@ -193,3 +193,7 @@ TWELVE_DATA_RATE_LIMIT=8      # API credits per 60s (raise for paid plans)
 
 AI Trader Pro — Professional AI Trading Terminal  
 © Mohsin Abbas. All rights reserved.
+=======
+# Ai-Trader-Pro
+Analysis Ai 
+>>>>>>> 98b78a91006c25010cb4047650940a15f747b2db
