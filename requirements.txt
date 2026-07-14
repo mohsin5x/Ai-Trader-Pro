@@ -1,0 +1,64 @@
+# ============================================================
+# AI Trader Pro — Production Requirements
+# ============================================================
+# Install: pip install -r requirements.txt
+#
+# Optional packages are listed at the bottom with notes.
+# The app works without them — they just enable extra features.
+# ============================================================
+
+# ── Core UI framework ─────────────────────────────────────────────────────
+customtkinter==5.2.2          # Dark-theme CTk widgets (pinned — API stable)
+pillow==12.3.0                # Image support for CTk widgets
+
+# ── Networking ────────────────────────────────────────────────────────────
+requests==2.34.2              # HTTP client for market data APIs
+certifi==2026.6.17            # TLS certificate bundle
+charset-normalizer==3.4.7     # requests dependency
+idna==3.18                    # requests dependency
+urllib3==2.7.0                # requests dependency
+
+# ── Data processing ───────────────────────────────────────────────────────
+numpy==2.4.6                  # Numerical arrays (indicators)
+pandas==3.0.3                 # DataFrames (OHLCV candles, indicators)
+python-dateutil==2.9.0.post0  # pandas dependency
+six==1.17.0                   # python-dateutil dependency
+tzdata==2026.2                # Timezone data for pandas/pytz
+
+# ── Configuration ─────────────────────────────────────────────────────────
+python-dotenv==1.0.1          # Load .env files for API keys
+packaging==26.2               # Version parsing utility
+
+# ── Security ──────────────────────────────────────────────────────────────
+keyring>=25.0.0               # OS Keyring for secure API key storage
+                              # (optional but strongly recommended — falls back
+                              # gracefully to config.json when not installed)
+
+# ── System monitoring ─────────────────────────────────────────────────────
+psutil>=5.9.0                 # CPU/RAM stats for System Status panel
+
+# ── Optional: Desktop push notifications ──────────────────────────────────
+# plyer>=2.1.0                # System-tray / taskbar alerts when signals fire
+                              # Falls back silently if not installed
+
+# ── Optional: Default (Free) data source ──────────────────────────────────
+# Needed only when "Default (Free)" is selected in Settings.
+# Not required for Twelve Data, Finnhub, or Alpha Vantage.
+# ccxt>=4.0.0                 # Crypto exchange data
+# tvdatafeed>=2.1.0           # TradingView data (Forex / metals / indices)
+
+# ── Optional: MetaTrader 5 data source ────────────────────────────────────
+# Windows only. Required only when "MT5" is selected in Settings
+# AND a running, logged-in MT5 terminal is present.
+# MetaTrader5>=5.0.45
+
+# ── Optional: Excel export from Paper Trading history ─────────────────────
+# Not required — "Export Excel" falls back to CSV without this.
+# openpyxl>=3.1.5
+
+# ── Development & Testing ─────────────────────────────────────────────────
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+
+# ── Packaging (Windows EXE build only — not needed to run) ────────────────
+# pyinstaller==6.11.1

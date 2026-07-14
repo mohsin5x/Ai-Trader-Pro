@@ -1,0 +1,42 @@
+name: Build Windows Setup.exe
+
+# Builds AI Trader Pro into a standalone Setup.exe using a GitHub-hosted
+# Windows runner -- useful if you don't have a Windows machine handy to
+# run PyInstaller / Inno Setup yourself. Trigger manually from the
+# Actions tab, or automatically on every push to main.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: pyinstaller packaging/AI_Trader_Pro.spec --noconfirm
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y
+
+      - name: Build Setup.exe
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" packaging\installer.iss
+
+      - name: Upload Setup.exe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AI-Trader-Pro-Setup
+          path: packaging/output/AI Trader Pro Setup.exe

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="120" viewBox="0 0 512 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B0E14"/>
+      <stop offset="100%" style="stop-color:#121620"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2962FF"/>
+      <stop offset="100%" style="stop-color:#1A3FCC"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="120" fill="url(#g1)" rx="10"/>
+  <polygon points="60,6 95,26 95,66 60,86 25,66 25,26"
+           fill="url(#g2)" stroke="#F5A623" stroke-width="2"/>
+  <rect x="37" y="52" width="9" height="18" fill="#00E5FF"/>
+  <rect x="50" y="42" width="9" height="28" fill="#F5A623"/>
+  <rect x="63" y="34" width="9" height="36" fill="#00E5FF"/>
+  <polyline points="37,55 54,45 67,37 76,41"
+            fill="none" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
+  <text x="110" y="55" font-family="Arial,sans-serif" font-size="38"
+        font-weight="bold" fill="#E2E8F0">AI Trader</text>
+  <text x="338" y="55" font-family="Arial,sans-serif" font-size="38"
+        font-weight="bold" fill="#F5A623"> Pro</text>
+  <line x1="112" y1="68" x2="460" y2="68" stroke="#F5A623" stroke-width="1" opacity="0.5"/>
+  <text x="112" y="88" font-family="Arial,sans-serif" font-size="13"
+        fill="#94A3B8">Professional AI Trading Platform</text>
+</svg>
